@@ -1,6 +1,6 @@
 title: moloshy
 author: GitHub User
-email: your-email@domain.com
+email:
 description: >
   Penetration tester from Scotland.
 
@@ -8,9 +8,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://moloshi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 website: https://www.moloshy.uk
-github_username:  
+github_username:
 bitbucket_username:
-codepen_username:
+codepen_username: moloshy
 linkedin_username: brettinternet
 twitter_username: moloshy
 facebook_username:
