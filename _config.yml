@@ -1,25 +1,23 @@
-title: Minimaless Demo
+title: moloshy
 author: GitHub User
 email: your-email@domain.com
 description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Penetration tester from Scotland.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://moloshi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
-website: https://www.brettinternet.com
-github_username:  brettinternet
-bitbucket_username: brettinternet
-codepen_username: brettinternet
+website: https://www.moloshy.uk
+github_username:  moloshy
+bitbucket_username:
+codepen_username:
 linkedin_username: brettinternet
-twitter_username: brettinternet
-facebook_username: brettinternet
-instagram_username: brettinternet
-keybase_username: brettinternet
-paypal_username: brettinternet
-stackoverflow_username: brettinternet # (developer story)
+twitter_username: moloshy
+facebook_username:
+instagram_username:
+keybase_username:
+paypal_username:
+stackoverflow_username:  # (developer story)
 
 
 collections:
