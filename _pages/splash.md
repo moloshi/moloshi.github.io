@@ -4,6 +4,6 @@ title: Splash
 permalink: /splash/
 ---
 
-I'm [brettinternet](http://www.brettgardiner.net/about/).
+I'm [moloshy](https://www.moloshy.uk/about/).
 
-Read my tech [blog](http://www.brettgardiner.net) or find me on social media.
+Read my security [blog](https://www.moloshy.uk/blog/) or find me on social media.
