@@ -1,209 +1,138 @@
-# Neumorphism <!-- omit in toc -->
+# minimaless
 
-> Neumorphism designed Jekyll theme for personal websites, portfolios and resumes.
+[![Gem Version](https://img.shields.io/gem/v/minimaless.svg)](https://rubygems.org/gems/jekyll-admin)
 
-* Featured on [JAMstack Themes](https://jamstackthemes.dev/theme/jekyll-neumorphism/)
-* Featured on [Jekyll Themes](https://jekyll-themes.com/neumorphism/)
-* Featured on [jekyllthemes](http://jekyllthemes.org/themes/neumorphism/)
+It's like the [minima](https://jekyll.github.io/minima/) theme, but with _less noise_ and more functionality. ✨
 
-[![Open Issues](https://badgen.net/github/open-issues/longpdo/neumorphism)](https://github.com/longpdo/neumorphism/issues)
-[![License](https://badgen.net/github/license/longpdo/neumorphism)](LICENSE)
-<a href="https://jekyll-themes.com">
-    <img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+See the [demo site](https://brettinternet.github.io/minimaless/) or follow these steps to [setup](/_pages/setup.md) your own Jekyll site with this theme.
 
-[View Demo](https://longpdo.github.io/neumorphism/) · [Report Bug](https://github.com/longpdo/neumorphism/issues) · [Request Feature](https://github.com/longpdo/neumorphism/issues)
+![minimaless screenshot preview](/screenshot.png)
 
-<!-- TABLE OF CONTENTS -->
-## Table of Contents <!-- omit in toc -->
+## Installation
 
-* [About The Project](#about-the-project)
-  * [Built With](#built-with)
-  * [Features](#features)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Usage](#usage)
-  * [Personalize and Customize](#personalize-and-customize)
-    * [_config.yml](#_configyml)
-    * [Github Metadata Plugin](#github-metadata-plugin)
-    * [_data/*.yml](#_datayml)
-    * [Particles.js](#particlesjs)
-* [Contributing](#contributing)
-* [License](#license)
-* [Acknowledgements](#acknowledgements)
+Add this line to your Jekyll site's Gemfile:
 
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-[![Project Screenshot][product-screenshot]](https://longpdo.github.io/neumorphism/)
-
-This is a personal website built with `Jekyll` and hosted on `Github Pages`, which is based on the new `Neumorphism` design trend and was developed with a mobile-first approach. This can be used by developers, who want to showcase their resume and portfolio. If you want to use this for your own website, fork this repository and then refer to [personalize and customize](#personalize-and-customize).
-
-### Built With
-
-* [Jekyll](https://jekyllrb.com/)
-
-### Features
-
-* Mobile-First Responsive Design
-* Animated preloader animation
-* Landing Page with animated background with [particles.js](https://vincentgarreau.com/particles.js/), a Typing Carousel and animated social icons
-* Dark Neumorphism Design on main content
-* [Animations On Scroll](https://michalsnik.github.io/aos/)
-* Filterable *Skills* word cloud
-* [Github's API](https://developer.github.com/v3/) automatically populating the *Open Source Projects* section
-* Gulp dev workflow with [BrowserSync](https://browsersync.io/), [Autoprefixer](https://autoprefixer.github.io/) and `JS` & `SCSS` minifying.
-* [Google Analytics](https://analytics.google.com/)
-
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-`The commands and instructions I provide are for MacOS - please look up the specific commands for your OS on your own.`
-
-### Prerequisites
-
-* [NodeJS](https://nodejs.org/en/)
-
-```sh
-brew install node
+```ruby
+gem "minimaless"
 ```
 
-If you need to switch between Node versions regurlarly, I would recommend to install Node via [Node Version Manager](https://github.com/nvm-sh/nvm/blob/master/README.md#manual-install).
+If you're interested, the gem is found [here](https://rubygems.org/gems/minimaless).
 
-* [Jekyll](https://jekyllrb.com/)
+And add this line to your Jekyll site:
 
-```sh
-gem install bundler jekyll
+```yaml
+theme: minimaless
 ```
 
-For more information, refer to [this](https://jekyllrb.com/docs/installation/).
+And then execute:
 
-* [Yarn](https://yarnpkg.com/)
+    $ bundle
 
-```sh
-npm install -g yarn
-```
 
-### Installation
+## Features
 
-> Recommended way: If you want to contribute to this theme or open issues due to problems implementing this on your own, I would recommend forking the repository directly. This makes it easier for me to solve open issues and questions or check pull requests.
+### Includes
 
-1.1: Fork the repository (using the `Fork` button at the top) and then clone the repository
+Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
 
-```sh
-# Replace {YOUR_USERNAME} with your actual username
-git clone https://github.com/{YOUR_USERNAME}/neumorphism.git
-```
-
-or
-
-1.2: Create your own repository (using the green `Use this template` button at the top) and then clone the repository
-
-```sh
-# Replace {YOUR_USERNAME}, {YOUR_REPOSITORY} with the actual values
-git clone https://github.com/{YOUR_USERNAME}/{YOUR_REPOSITORY}.git
-```
-
-2: Change directory into neumorphism
-
-```sh
-cd neumorphism
-```
-
-3: Install dependencies
-
-```sh
-yarn
-```
-
-<!-- USAGE EXAMPLES -->
+  - `disqus_comments.html` &mdash; Code to markup disqus comment box.
+  - `footer.html` &mdash; Defines the site's footer section.
+  - `google-analytics.html` &mdash; Inserts Google Analytics module (active only in production environment).
+  - `head.html` &mdash; Code-block that defines the `<head></head>` in *default* layout.
+  - `header.html` &mdash; Defines the site's main header section. By default, pages with a defined `title` attribute will have links displayed here.
+  - `contact-icons.html` &mdash; Inserts social icons when you specify a social media site `*_username` in the config.
+    - You can also add an `.asc` file for a key icon to appear for users to download your GPG key file.
 
 ## Usage
 
-* Run and develop locally with live server at `http://localhost:4000`, this will also build production-ready `JS` and `SCSS` assets with every change
+### Customization
 
-```sh
-gulp
+To override the default structure and style of minimaless, simply create the concerned directory at the root of your site, copy the file you wish to customize to that directory, and then edit the file.
+e.g., to override the [`_includes/head.html `](_includes/head.html) file to specify a custom style path, create an `_includes` directory, copy `_includes/head.html` from minimaless gem folder to `<yoursite>/_includes` and start editing that file.
+
+The site's default CSS has now moved to a new place within the gem itself, [`assets/main.scss`](assets/main.scss). To **override the default CSS**, the file has to exist at your site source. Do either of the following:
+- Create a new instance of `main.scss` at site source.
+  - Create a new file `main.scss` at `<your-site>/assets/`
+  - Add the frontmatter dashes, and
+  - Add `@import "minimaless";`, to `<your-site>/assets/main.scss`
+  - Add your custom CSS.
+- Download the file from this repo
+  - Create  a new file `main.scss` at `<your-site>/assets/`
+  - Copy the contents at [assets/main.scss](assets/main.scss) onto the `main.scss` you just created, and edit away!
+- Copy directly from Minimaless gem
+  - Go to your local minimaless gem installation directory ( run `bundle show minimaless` to get the path to it ).
+  - Copy the `assets/` folder from there into the root of `<your-site>`
+  - Change whatever values you want, inside `<your-site>/assets/main.scss`
+- Edit index.md to change what appears on the site's splash/landing page.
+
+--
+
+### Tags
+
+Make a new folder called `tag` where you will add markdown files for each new tag you use on your site.
+
+```
+minimaless
+├─ tag
+│  └─ kittens.md
+└─ _posts
 ```
 
-* After committing and pushing, see the `Settings` page of your repository to see where your site is published at via `Github Pages`.
+Create a new markdown file with the tag as the file name (eg. `<tag name>.md`). You only need to set up the header information. For example, if the tag is `kittens`, then use the following header:
 
-### Personalize and Customize
-
-#### _config.yml
-
-Edit `_config.yml` to personalize your site. For documentation, refer to [docs/config.md](https://github.com/longpdo/neumorphism/blob/master/docs/config.md).
-
-#### Github Metadata Plugin
-
-If you want to automatically have your Github repositories pulled for the *Open Source Projects* section, then you also need to authenticate yourself for the Github Metadata plugin to work.
-
-You need to generate a new personal access token on GitHub:
-
-* Go to the [Github Token site](https://github.com/settings/tokens/new)
-* Select the scope `public_repository`, and add a description.
-* Confirm and save the settings. Copy the token you see on the page.
-* Create a `.env` file inside your repository and add your generated `JEKYLL_GITHUB_TOKEN`:
-
-```text
-JEKYLL_GITHUB_TOKEN=0YOUR0GENERATED0TOKEN0
+```yml
+---
+layout: tags
+tag: kittens
+permalink: /tag/kittens/
+---
 ```
 
-To complete the configuration for the Github Metadata plugin, you also need to change the value of `repository` inside `_config.yml`. After this, you should the Github Metadata plugin should work properly.
+This must be done for every new tag you create. This is the page that users will see when they click on a tag to display the list of posts for each tag. [View the tag page here](https://brettinternet.github.io/minimaless/tags/).
 
-For optimal results, you should make sure, that every Github project, you want included on this portfolio, has added following informations on Github:
+--
 
-* Description
-* Homepage link, if there is a live version of it
-* Topics
+### Enabling comments (via Disqus)
 
-Example:
-![Github Repository Information Example][github-repo-info]
+Optionally, if you have a Disqus account, you can tell Jekyll to use it to show a comments section below each post.
 
-#### _data/*.yml
+To enable it, add the following lines to your Jekyll site:
 
-Edit files inside `_data` to add information to the portfolio. For documentation, refer to [docs/data.md](https://github.com/longpdo/neumorphism/blob/master/docs/data.md).
+```yaml
+  disqus:
+    shortname: my_disqus_shortname
+```
 
-#### Particles.js
+You can find out more about Disqus' shortnames [here](https://help.disqus.com/customer/portal/articles/466208).
 
-Edit `assets/particles.json` to customize the landing page backgorund animation. For more information, refer to [this](https://github.com/VincentGarreau/particles.js/#options).
+Comments are enabled by default and will only appear in production, i.e., `JEKYLL_ENV=production`
 
-<!-- CONTRIBUTING -->
+If you don't want to display comments for a particular post you can disable them by adding `comments: false` to that post's YAML Front Matter.
+
+--
+
+### Enabling Google Analytics
+
+To enable Google Anaytics, add the following lines to your Jekyll site:
+
+```yaml
+  google_analytics: UA-NNNNNNNN-N
+```
+
+Google Analytics will only appear in production, i.e., `JEKYLL_ENV=production`
+
+
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Bug reports and pull requests are welcome on GitHub at https://github.com/brettinternet/minimaless.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+## Development
 
-<!-- LICENSE -->
+To set up your environment to develop this theme, run `script/bootstrap`.
+
+To test your theme, run `script/server` (or `bundle exec jekyll serve`) and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme and the contents. As you make modifications, your site will regenerate and you should see the changes in the browser after a refresh.
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-* [Font Awesome](https://fontawesome.com/)
-* [Normalize.css](https://necolas.github.io/normalize.css/)
-* Based Preloader on [Codrin Pavel's](https://codepen.io/zerospree/pen/aCjAz) version
-* Typing Carousel by [Gregory Schier](https://codepen.io/gschier/pen/jkivt)
-* Social Button Animation by [Stéphane Lyver](https://codepen.io/wouwi/pen/Lwrmi)
-* Adapted [Damian Jankowski's](https://codepen.io/dolaron/pen/rNadmOE) color palette for the neumorphism design
-* Based Timeline on [Krishna Babu's](https://codepen.io/krishnab/pen/OPwqbW) version
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[product-screenshot]: https://raw.githubusercontent.com/longpdo/neumorphism/master/docs/screenshot.gif
-[github-repo-info]: https://raw.githubusercontent.com/longpdo/neumorphism/master/docs/github-repo-info.png
+The theme is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
