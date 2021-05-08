@@ -24,6 +24,12 @@
   </li>
   {% endif %}
 
+  {% if site.hackerone_username %}
+  <li>
+    <a href="https://hackerone.com/{{site.hackerone_username}})" target="_blank"><i class="icon fa fa-h1"></i></a>
+  </li>
+  {% endif %}
+
   {% if site.codepen_username %}
   <li>
     <a href="https://app.hackthebox.eu/profile/30010" target="_blank"><i class="icon fa fa-codepen"></i></a>
